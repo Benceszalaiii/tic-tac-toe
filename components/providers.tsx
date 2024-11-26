@@ -13,6 +13,12 @@ const Providers = ({ ...props }: ToasterProps) => {
       theme={resolvedTheme as ToasterProps["theme"]}
       className="toaster group"
       richColors
+      position="bottom-center"
+      toastOptions={{
+        classNames: {
+          info: "bg-orange-500 bg-opacity-75 backdrop-blur-lg border-black border-2",
+        }
+      }}
       {...props}
     />
   );

@@ -35,7 +35,7 @@ export default function Page() {
         toast.error("You lost!");
       }
       if (score === 3) {
-        toast.info("It's a draw!");
+        toast("It's a draw!", {className: "bg-orange-500 backdrop-blur-lg border-border border"});
       }
     }
   }, [score]);
@@ -44,9 +44,6 @@ export default function Page() {
     [0, 0, 0],
     [0, 0, 0],
   ]);
-  useEffect(() => {
-    setBoard(game.board);
-  }, [game]);
   const checkState = (currentPlayer: "x" | "o", status: GameStatus) => {
     if (status === GameStatus.ONGOING) {
       setScore(null);
